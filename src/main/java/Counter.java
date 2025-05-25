@@ -9,11 +9,11 @@ public class Counter {
 	}
 		
 	public void reset() {
-		count = 0;
+		count = 2;
 	}
 	
 	public void increment() {
-		count++;
+		count--;
 	}
 	
 	public void decrement() {
