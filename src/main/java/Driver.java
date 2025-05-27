@@ -6,19 +6,16 @@ public class Driver {
 		
 		Counter counter = new Counter();
 		
-		System.out.println("Current count: " + counter.getCount());
-
-		counter.increaseBy(5);
+		System.out.println("hitung:" + counter.getCount());
 		
-		System.out.println("Current count: " + counter.getCount());
-
-		counter.decreaseBy(2);
-
-		System.out.println("Current count: " + counter.getCount());
-
-		counter.multiplyBy(6);
-
-		System.out.println("Current count: " + counter.getCount());
+		counter.increment();
+		
+		System.out.println("hitung:" + counter.getCount());
+		
+		counter.decrement();
+		
+		System.out.println("hitung:" + counter.getCount());
+		
 	}
 
 }
