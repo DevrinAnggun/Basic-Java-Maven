@@ -27,13 +27,14 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
 
-    - name: Build with Maven (ignore test failure)
-      run: mvn -B compile --file pom.xml || true
+    - name: Build with Maven
+      run: mvn -B compile --file pom.xml
 
     - name: Analyze with SonarCloud
+      if: ${{ success() }}  # Hanya jalankan jika build berhasil
       env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         mvn sonar:sonar \
           -Dsonar.projectKey=DevrinAnggun_Basic-Java-Maven \
