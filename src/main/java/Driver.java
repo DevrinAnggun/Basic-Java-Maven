@@ -2,23 +2,27 @@ import src.main.java.Counter;
 
 public class Driver {
 
-	public static void main(String[] args) {
-		
-		Counter counter = new Counter();
-		
-		System.out.println("Current count: " + counter.getCount());
+    private static final String API_KEY = "1234567890-secret-api-key";
 
-		counter.increaseByy(5);
-		
-		System.out.println("Current count: " + counter.getCount());
+    public static void main(String[] args) {
 
-		counter.decreaseBy(2);
+        Counter counter = new Counter();
 
-		System.out.println("Current count: " + counter.getCount());
+        int unusedVariable = 42;
 
-		counter.multiplyBy(6);
+        try {
+            int x = 1 / 0;
+        } catch (Exception e) {
+        }
 
-		System.out.println("Current count: " + counter.getCount());
-	}
+        System.out.println("hitung:" + counter.getCount());
 
+        counter.increment();
+
+        System.out.println("hitung:" + counter.getCount());
+
+        counter.decrement();
+
+        System.out.println("hitung:" + counter.getCount());
+    }
 }
