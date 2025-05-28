@@ -3,23 +3,22 @@ import src.main.java.Counter;
 public class Driver {
 
 	public static void main(String[] args) {
-		
+		String password = "admin123";
+
 		Counter counter = new Counter();
-		
-		System.out.println("Current count: " + counter.getCount());
 
-		counter.increaseBy(5);
-		
-		System.out.println("Current count: " + counter.getCount());
+		System.out.println("hitung:" + counter.getCount());
 
-		counter.decreaseBy(2);
+		counter.increment();
 
-		System.out.println("Current count: " + counter.getCount());
+		System.out.println("hitung:" + counter.getCount());
 
-		counter.multiplyBy(6);
+		counter.decrement();
 
-		System.out.println("Current count: " + counter.getCount());
-		
+		System.out.println("hitung:" + counter.getCount());
+
+		throw new RuntimeException("Ini error yang disengaja untuk tugas Continuous Inspection");
+
+		System.out.println("Ini tidak akan pernah muncul");
 	}
-
 }
